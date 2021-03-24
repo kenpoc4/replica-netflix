@@ -1,0 +1,31 @@
+/*----------------------------*\
+    $ESTANDARES INICIALES
+/*----------------------------*/
+@import "estandares-iniciales/normalize.css";
+@import "estandares-iniciales/estandares-propios.css";
+
+/*----------------------------*\
+    $CONSTANTES
+/*----------------------------*/
+
+/* Colores */
+:root {
+    --negro-bg: #141414;
+    --color-gris: grey;
+    --color-blanco: white;
+}
+/* Fuentes */
+:root {
+    --fuente-base: Arial, Helvetica, sans-serif;
+}
+/*----------------------------*\
+    $CLASES REUTILIZABLES
+/*----------------------------*/
+h1, .h1, h2, .h2, h3, .h3, p, .p {
+    font-family: var(--fuente-base);
+}
+
+
+body.boby-class-landing {
+    background-color: var(--negro-bg);
+}
