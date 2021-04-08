@@ -12,6 +12,8 @@
 :root {
     --negro-bg: #141414;
     --color-gris: grey;
+    --color-gris-netflix: #b3b3b3;
+    --color-gris-claro: #e5e5e5;
     --color-border: #e5e5e5;
     --color-blanco: white;
 }
@@ -34,19 +36,30 @@ h1, .h1, h2, .h2, h3, .h3, p, .p {
 .text-center {
     text-align: center;
 }
+.synopsis {
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+    font-size: 1.4vw;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.45);
+}
 /* Others */
 .flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-
-
-body.boby-class-landing {
-    background-color: var(--negro-bg);
+.icon-netflix {
+    width: 1.783rem;
+    height: 2.3rem;
 }
-.container-landing {
+
+body {
+    background-color: var(--negro-bg);
+    position: relative;
+}
+.container-landing,
+.container-main {
     padding: 0px 60px;
 }
 /*----------------------------*\
@@ -60,13 +73,71 @@ header.header-landing {
     position: relative;
     z-index: 1;
 }
-header.header-landing figure {
+header.header-main  {
+    background: linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0));
+    max-height: 68px;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+header.header-landing figure,
+header.header-main figure {
     margin: 0px;
 }
-header.header-landing figure img {
+header.header-landing figure img,
+header.header-main figure img {
     width: 92.5px;
     height: 55px;
 }
+/* Icon Menu */
+.main-menu {
+    justify-content: start;
+}
+.main-menu li {
+    margin-bottom: 0.75rem;
+    margin-left: 1.8rem;
+}
+.main-menu li:first-of-type {
+    margin: 0rem;
+}
+.main-menu li a {
+    font-family: var(--fuente-base);
+    color: var(--color-gris-claro);
+    font-size: 1.4rem;
+}
+.main-menu li a:hover {
+    color: var(--color-gris-netflix);
+}
+.main-menu li:nth-of-type(2) a {
+    color: var(--color-blanco);
+    font-weight: bold;
+}
+.icons-menu {
+    justify-content: end;
+    padding-top: 1.5rem;
+}
+.icons-menu li {
+    margin-left: 2.1rem;
+}
+.icons-menu li:last-of-type figure {
+    margin-right: 1.5rem;
+}
+.icons-menu i {
+    color: var(--color-blanco);
+}
+.icon-perfil {
+    width: 3.2rem;
+    height: 3.2rem;
+    display: grid;
+}
+#icon-perfil-img {
+    object-fit: cover;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 0.3rem;
+}
+/* Main Menu */
 main.main-landing-page {
     position: absolute;
     top: 0;
@@ -156,4 +227,91 @@ section.whos-watching {
 .profile-button:hover {
     color: var(--color-blanco);
     border: 1px solid var(--color-blanco);
+}
+/*----------------------------*\
+    HERO
+/*----------------------------*/
+.hero-protector {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.hero-protector img {
+    position: absolute;
+    -o-background-size: cover;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 56.25vw;
+}
+.hero-main {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 56.25vw;
+}
+.gradient-hero {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, var(--negro-bg), transparent);
+}
+.hero-content {
+    position: absolute;
+    left: 6rem;
+    top: 0;
+    bottom: 35%;
+    width: 36%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.hero-content figure {
+    min-height: 13.2vw;
+    position: relative;
+}
+.hero-content p {
+    margin: .5vw 0 0 0;
+}
+.button-container-hero {
+    margin-top: 1.5vw;
+    justify-content: flex-start;
+}
+.button-container-hero span {
+    color: white;
+    font-family: var(--fuente-base);
+    line-height: 88%;
+    font-size: 1.3vw;
+    padding-top: .6vw;
+    padding-bottom: .6vw;
+    padding-left: 1.5vw;
+    padding-right: 1.8vw;
+    margin-bottom: 1rem;
+    border-radius: .4rem;
+    font-weight: bold;
+    margin-right: .8vw;
+}
+.button-container-hero span i {
+    margin-right: .75vw;
+}
+.button-container-hero span.play-hero {
+    background-color: white;
+    color: var(--negro-bg);
+}
+.button-container-hero span.play-hero:hover {
+    background-color: rgba(255,255,255,0.75);
+}
+.button-container-hero span.more-info-hero {
+    background-color: rgba(109,109,110,0.7);
+}
+.button-container-hero span.more-info-hero:hover {
+    background-color: rgba(109,109,110,0.4);
 }
